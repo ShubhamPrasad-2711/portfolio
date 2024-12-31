@@ -1,0 +1,5 @@
+#Ignore nodue_modules 
+
+/node_modules
+
+portfolio/node_modules
