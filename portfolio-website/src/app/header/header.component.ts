@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +13,16 @@ export class HeaderComponent implements OnInit{
   isDarkMode = true;
   isMobileMenuOpen = false;
 
-  constructor(private renderer: Renderer2 , private themeService : ThemeService) { 
+  constructor(private renderer: Renderer2 , private themeService : ThemeService , private viewportScroller : ViewportScroller) { 
     this.themeService.darkMode$.subscribe(
       isDark => this.isDarkMode = isDark
     );
+  }
+   scrollToSection(elementId: string): void {
+    document.getElementById(elementId)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   }
 
   ngOnInit(): void {

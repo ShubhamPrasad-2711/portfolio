@@ -2,19 +2,20 @@
     <div class="header-container">
       <!-- Logo/Name -->
       <div class="logo">
-        <a ><b>Shubham Prasad</b></a>
+        <a ><b style="cursor: pointer;">Shubham Prasad</b></a>
       </div>
   
       <!-- Navigation -->
       <nav class="nav-menu">
         <ul>
-          <li><a  class="active">Home</a></li>
-          <li><a >Services</a></li>
-          <li><a >Works</a></li>
-          <li><a >About</a></li>
-          <li><a >Contact</a></li>
+          <li><a (click)="scrollToSection('home')">Home</a></li>
+          <li><a (click)="scrollToSection('about')">About</a></li>
+          <li><a (click)="scrollToSection('work')">Work</a></li>
+          <li><a (click)="scrollToSection('certifications')">Certifications</a></li>
+          <li><a (click)="scrollToSection('contact')">Contact</a></li>
         </ul>
       </nav>
+      
       <div class="theme-toggle-wrapper">
         <label class="theme-switch">
           <input type="checkbox" [checked]="isDarkMode" (change)="toggleTheme()">
