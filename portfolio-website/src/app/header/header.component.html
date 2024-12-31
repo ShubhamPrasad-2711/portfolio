@@ -1,1 +1,54 @@
-<p>header works!</p>
+<header class="header">
+    <div class="header-container">
+      <!-- Logo/Name -->
+      <div class="logo">
+        <a ><b>Shubham Prasad</b></a>
+      </div>
+  
+      <!-- Navigation -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a  class="active">Home</a></li>
+          <li><a >Services</a></li>
+          <li><a >Works</a></li>
+          <li><a >About</a></li>
+          <li><a >Contact</a></li>
+        </ul>
+      </nav>
+      <div class="theme-toggle-wrapper">
+        <label class="theme-switch">
+          <input type="checkbox" [checked]="isDarkMode" (change)="toggleTheme()">
+          <span class="slider round">
+            <i class="fas fa-moon moon-icon"></i>
+            <i class="fas fa-sun sun-icon"></i>
+          </span>
+        </label>
+      </div>
+      
+  
+      <!-- Theme Toggle and Menu -->
+      <div class="header-actions">
+        <button class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="menu-toggle">
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Add this after your existing header content -->
+<div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <nav class="mobile-nav">
+      <ul>
+        <li><a  (click)="toggleMobileMenu()">Home</a></li>
+        <li><a  (click)="toggleMobileMenu()">Services</a></li>
+        <li><a  (click)="toggleMobileMenu()">Works</a></li>
+        <li><a  (click)="toggleMobileMenu()">About</a></li>
+        <li><a  (click)="toggleMobileMenu()">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  

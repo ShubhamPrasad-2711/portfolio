@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-dark: #1a1a1a;
+    --text-dark: #ffffff;
+    --accent-dark: #4ecca3;
+    --primary-light: #ffffff;
+    --text-light: #1a1a1a;
+    --accent-light: #2e8b6f;
+  }
+  
+  .dark-theme {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+  
+    .header {
+      background-color: var(--primary-dark);
+    }
+  
+    .accent {
+      color: var(--accent-dark);
+    }
+  }
+  
+  .light-theme {
+    background-color: var(--primary-light);
+    color: var(--text-light);
+  
+    .header {
+      background-color: var(--primary-light);
+    }
+  
+    .accent {
+      color: var(--accent-light);
+    }
+  }
+  
