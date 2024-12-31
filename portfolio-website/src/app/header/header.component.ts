@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit{
   isDarkMode = true;
   isMobileMenuOpen = false;
 
-  constructor(private renderer: Renderer2 , private themeService : ThemeService , private viewportScroller : ViewportScroller) { 
+  constructor(private renderer: Renderer2 , private themeService : ThemeService) { 
     this.themeService.darkMode$.subscribe(
       isDark => this.isDarkMode = isDark
     );

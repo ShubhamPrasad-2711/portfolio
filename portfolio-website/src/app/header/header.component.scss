@@ -17,6 +17,7 @@
     }
   
     .logo {
+      margin-right: auto;
       a {
         color: #ffffff;
         font-size: 1.5rem;
@@ -24,6 +25,7 @@
         text-decoration: none;
       }
     }
+    
   
     .nav-menu {
       ul {
@@ -75,6 +77,8 @@
   }
 
   .theme-toggle-wrapper {
+    // margin-right: -5rem;
+    margin-left: auto;
     .theme-switch {
       position: relative;
       display: inline-block;
