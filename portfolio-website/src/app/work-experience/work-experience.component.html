@@ -1,1 +1,26 @@
-<p>work-experience works!</p>
+<section class="work-experience">
+    <h2>Work Experience</h2>
+    
+    <div class="experience-container">
+      <div class="experience-card" *ngFor="let exp of experiences">
+        <div class="card-header">
+          <h3>{{exp.role}}</h3>
+          <span class="company">{{exp.company}}</span>
+          <span class="duration">{{exp.duration}}</span>
+        </div>
+        
+        <div class="card-body">
+          <ul class="description-list" style="list-style-type:square;">
+            <li *ngFor="let point of exp.description">{{point}}</li>
+          </ul>
+          
+          <div class="tech-stack">
+            <span class="tech-tag" *ngFor="let tech of exp.technologies">
+              {{tech}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

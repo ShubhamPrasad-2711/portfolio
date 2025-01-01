@@ -1,1 +1,20 @@
-<p>certifications works!</p>
+<section class="certifications">
+  <h2>Certifications</h2>
+
+  <div class="certificates-grid">
+    <div class="certificate-card" *ngFor="let cert of certificates">
+      <div class="card-content">
+        <div class="cert-icon">
+          <img [src]="cert.iconPath" [alt]="cert.name + ' icon'" />
+        </div>
+        <h3>{{ cert.name }}</h3>
+        <p class="issuer">{{ cert.issuer }}</p>
+        <p class="date">{{ cert.date }}</p>
+        <button (click)="viewCertificate(cert.fileName)" class="view-btn">
+          <span>View Certificate</span>
+          <i class="fas fa-external-link-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

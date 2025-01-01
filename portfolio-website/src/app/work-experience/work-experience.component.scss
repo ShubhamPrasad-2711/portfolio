@@ -1,0 +1,92 @@
+.work-experience {
+    padding: 0 4rem 6rem 4rem;
+    background: var(--background);
+  
+    h2 {
+      font-size: 2.5rem;
+      color: var(--text);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+  
+    .experience-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+  
+    .experience-card {
+      background: var(--cardBg);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+  
+      .card-header {
+        margin-bottom: 1.5rem;
+  
+        h3 {
+          color: var(--accent);
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+  
+        .company {
+          display: block;
+          color: var(--text);
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+        }
+  
+        .duration {
+          color: var(--secondaryText);
+          font-size: 0.9rem;
+        }
+      }
+  
+      .card-body {
+        ul {
+          color: var(--text);
+          line-height: 1.6;
+          margin-bottom: 2rem;
+
+          li{
+            padding-bottom: 0.7rem;
+          }
+        }
+  
+        .tech-stack {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.8rem;
+  
+          .tech-tag {
+            background: rgba(78, 204, 163, 0.1);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+  
+            &:hover {
+              background: rgba(78, 204, 163, 0.2);
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .work-experience {
+      padding: 3rem 1.5rem;
+    }
+  }
+  
