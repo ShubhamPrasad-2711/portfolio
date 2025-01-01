@@ -72,4 +72,15 @@ export class MainComponent implements OnInit, OnDestroy {
     }
     this.startTypewriter();
   }
+
+  scrollToSection(elementId: string): void {
+    document.getElementById(elementId)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
+  navigate(){
+    window.open ( "https://www.github.com/ShubhamPrasad-2711");
+  }
 }
