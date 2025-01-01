@@ -19,69 +19,120 @@
       right: -250px;
       border-radius: 50%;
     }
-  
-    .skills-progress {
-      flex: 1;
-      max-width: 500px;
+
+    .education-section {
+      padding: 2rem;
       
-      .skill-item {
-        margin-bottom: 2.5rem;
-        transform: translateX(-20px);
-        opacity: 0;
-        animation: slideIn 0.5s ease forwards;
-  
-        @for $i from 1 through 3 {
-          &:nth-child(#{$i}) {
-            animation-delay: #{$i * 0.2}s;
+      .section-title {
+        color: var(--accent);
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -8px;
+          width: 40px;
+          height: 3px;
+          background: var(--accent);
+        }
+      }
+    
+      .education-item {
+        background: var(--cardBg);
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 4px;
+          height: 100%;
+          background: var(--accent);
+          opacity: 0.5;
+        }
+    
+        &:hover {
+          transform: translateX(10px);
+          
+          &::before {
+            opacity: 1;
           }
         }
-  
-        .skill-header {
+    
+        .education-header {
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin-bottom: 1rem;
-          
-          h3 {
+    
+          h4 {
             color: var(--text);
-            font-family: 'Space Mono', monospace;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
           }
-          
-          span {
+    
+          .year {
             color: var(--accent);
             font-family: 'Space Mono', monospace;
           }
         }
-  
-        .progress-bar {
-          height: 6px;
-          background: var(--cardBg);
-          border-radius: 6px;
-          overflow: hidden;
-          position: relative;
-  
-          .progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent), rgba(78, 204, 163, 0.7));
-            border-radius: 6px;
+    
+        h5 {
+          color: var(--text);
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+        }
+    
+        .location {
+          color: var(--secondaryText);
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
+        }
+    
+        .achievements {
+          list-style: none;
+          
+          li {
+            color: var(--secondaryText);
+            margin-bottom: 0.5rem;
             position: relative;
-            animation: progressLoad 1.5s ease-out forwards;
-  
-            &::after {
-              content: '';
+            padding-left: 1.5rem;
+    
+            &::before {
+              content: '▹';
               position: absolute;
-              top: 0;
               left: 0;
-              width: 100%;
-              height: 100%;
-              background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-              animation: progressShine 2s infinite;
+              color: var(--accent);
             }
           }
         }
       }
     }
+    
+    @media (max-width: 768px) {
+      .education-section {
+        padding: 1rem;
+        
+        .education-item {
+          padding: 1.5rem;
+          
+          .education-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+          }
+        }
+      }
+    }
+    
   
     .about-content {
       flex: 1;
@@ -238,10 +289,6 @@
     .about-me {
       flex-direction: column;
       padding: 3rem 1.5rem;
-      
-      .skills-progress, .about-content {
-        max-width: 100%;
-      }
     }
   }
   
