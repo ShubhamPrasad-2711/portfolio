@@ -74,4 +74,5 @@ export class ThemeService {
     }
     this.applyThemeColors(isDark);
   }
+  
 }
