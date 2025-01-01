@@ -55,7 +55,6 @@ export class ThemeService {
     this.updateTheme(isDark);
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
-  
   private applyThemeColors(isDark: boolean): void {
     const colors = isDark ? darkTheme : lightTheme;
     Object.entries(colors).forEach(([key, value]) => {
@@ -74,5 +73,5 @@ export class ThemeService {
     }
     this.applyThemeColors(isDark);
   }
-  
+
 }
