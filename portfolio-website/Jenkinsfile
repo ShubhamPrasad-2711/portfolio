@@ -15,8 +15,10 @@ pipeline {
         stage('Install Dependencies') {
             steps{
                 script {
-                    sh 'npm install'
-                    sh 'npm install -g @angular/cli'
+                    dir('portfolio/portfolio-website') {
+                        sh 'npm install'
+                        sh 'npm install -g @angular/cli'
+                    }
                 }
             }
         }
@@ -24,7 +26,9 @@ pipeline {
         stage('Build Project') {
             steps {
                 script {
-                    sh 'ng build --configuration=production'
+                   dir('portfolio/portfolio-website'){
+                     sh 'ng build --configuration=production'
+                   }
                 }
             }
         }
