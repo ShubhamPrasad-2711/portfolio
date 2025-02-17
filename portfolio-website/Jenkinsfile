@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+     tools {
+        nodejs 'NodeJS Plugin'  // Ensure this matches the name you set in Global Tool Configuration
+    }
+
     stages{
         stage('Clone'){
             steps {
@@ -11,8 +15,6 @@ pipeline {
         stage('Install Dependencies') {
             steps{
                 script {
-                    def nodeHome = tool name: 'NodeJS 14', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
-                    env.PATH = "${nodeHome}/bin:${env.PATH}"
                     sh 'npm install'
                 }
             }
