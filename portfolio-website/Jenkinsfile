@@ -12,6 +12,17 @@ pipeline {
             }
         }
 
+        stage('See ALl file'){
+            steps {
+            script {
+             dir('portfolio/portfolio-website') {
+                sh 'ls -R'  // List all files and directories recursively
+             }
+        }
+    }
+        }
+           
+
         stage('Install Dependencies') {
             steps{
                 script {
