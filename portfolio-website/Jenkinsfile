@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages{
+        stage('Clone'){
+            steps {
+                git branch : 'main', url:'https://github.com/ShubhamPrasad-2711/portfolio.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps{
+                script {
+                    def nodeHome = tool name: 'NodeJS 14', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+                    env.PATH = "${nodeHome}/bin:${env.PATH}"
+                    sh 'npm install'
+                }
+            }
+        }
+
+        stage('Build Project') {
+            steps {
+                script {
+                    sh 'ng build --configuration=production'
+                }
+            }
+        }
+    }
+}
