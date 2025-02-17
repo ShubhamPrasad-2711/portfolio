@@ -16,6 +16,7 @@ pipeline {
             steps{
                 script {
                     dir('portfolio/portfolio-website') {
+                        sh 'ls -al'
                         sh 'npm install'
                         sh 'npm install -g @angular/cli'
                     }
@@ -27,7 +28,7 @@ pipeline {
             steps {
                 script {
                    dir('portfolio/portfolio-website'){
-                     sh 'ng build --configuration=production'
+                     sh 'ng build'
                    }
                 }
             }
