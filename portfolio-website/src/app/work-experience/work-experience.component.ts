@@ -19,6 +19,18 @@ interface WorkExperience {
 export class WorkExperienceComponent {
   experiences: WorkExperience[] = [
     {
+      company: "Intellypod Private Limited",
+      role: "Software Developer",
+      duration: "February 2025 - Present",
+      description: [
+        "Led development of scalable web applications using Angular and Node.js, improving performance and maintainability.",
+        "Optimized frontend performance, reducing bundle size by 35% and improving load time by 30% using lazy loading and tree shaking.",
+        "Implemented CI/CD pipelines with Jenkins and GitHub Actions, automating deployment and reducing manual errors by 80%.",
+        "Collaborated with cross-functional teams on 3+ projects, delivering high-quality, scalable software solutions.",
+      ],
+      technologies: ["Angular", "Ionic", "Jenkins", "Javascript", "TypeScript", "IIS Server"]
+    },
+    {
       company: "Transmogriffy Global Private Limited",
       role: "Fullstack Software Developer",
       duration: "Jan 2024 - Aug 2024",
